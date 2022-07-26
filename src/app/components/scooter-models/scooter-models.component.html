@@ -1,0 +1,45 @@
+<section class="ftco-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="table-wrap">
+          <table class="table">
+            <thead class="thead-dark">
+            <tr>
+              <th>ID no.</th>
+              <th>Nom</th>
+              <th>&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr
+              *ngFor="let model of this.models"
+              class="alert" role="alert"
+            >
+              <th class="col-1" scope="row">{{model.id}}</th>
+              <td class="col-10">{{model.name}}</td>
+              <td>
+                <button
+                  class="btn btn-link"
+                  (click)="remove(model)"
+                >
+                  <span aria-hidden="true">
+                    <i class="bi bi-x-circle"></i>
+                  </span>
+                </button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <a
+        class="btn btn-outline-primary"
+        routerLink="/create-scooter-model"
+        routerLinkActive="active"
+      >
+        <i class="bi bi-plus-circle"></i> Ajouter un modèle
+      </a>
+    </div>
+  </div>
+</section>

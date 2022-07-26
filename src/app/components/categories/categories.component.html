@@ -1,0 +1,45 @@
+<section class="ftco-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="table-wrap">
+          <table class="table">
+            <thead class="thead-dark">
+            <tr>
+              <th>ID no.</th>
+              <th>Nom</th>
+              <th>&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr
+              *ngFor="let category of this.categories"
+              class="alert" role="alert"
+            >
+              <th class="col-1" scope="row">{{category.id}}</th>
+              <td class="col-10">{{category.name}}</td>
+              <td>
+                <button
+                  class="btn btn-link"
+                  (click)="remove(category)"
+                >
+                  <span aria-hidden="true">
+                    <i class="bi bi-x-circle"></i>
+                  </span>
+                </button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <a
+        class="btn btn-outline-primary"
+        routerLink="/create-category"
+        routerLinkActive="active"
+      >
+        <i class="bi bi-plus-circle"></i> Ajouter une catégorie
+      </a>
+    </div>
+  </div>
+</section>

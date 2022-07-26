@@ -1,0 +1,32 @@
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center mb-5">
+        <h2 class="heading-section">Utilisateurs</h2>
+      </div>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Prénom</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Email</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.firstname }}</td>
+          <td>{{ user.lastname }}</td>
+          <td>{{ user.email }}</td>
+          <td *ngIf="user.isBanned">
+            <button class="btn btn-info" (click)="restoreUser(user)">Réhabiliter</button>
+          </td>
+          <td *ngIf="!user.isBanned">
+            <button class="btn btn-danger" (click)="banUser(user)">Bannir</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
